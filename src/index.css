@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+.fade-in-from-left {
+  animation: fade-in-from-left 0.5s ease-out forwards;
+}
+
+.fade-in-from-right {
+  animation: fade-in-from-right 0.5s ease-out forwards;
+}
+
+@keyframes fade-in-from-left {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-from-right {
+  from {
+    transform: translateX(+50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

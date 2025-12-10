@@ -127,7 +127,7 @@ export default function RecvPage(props:{peer?:Peer}) {
             <input type="text" className="w-full border-2 border-gray-400 rounded-md p-2 text-center fade-in-from-right" disabled={!props.peer} placeholder={t("placeholder")} value={peerId} onChange={ev=>setPeerId(ev.target.value)}/>
             <div className="flex gap-2 fade-in-from-right">
                 {
-                    !connecting && doing.length === 0 ?
+                    props.peer && !connecting && doing.length === 0 ?
                     <button className="rounded-md px-4 py-2 cursor-pointer font-medium shadow text-black bg-[#66CCFF] hover:bg-[#84d6ff] active:scale-95 w-30" onClick={()=>connect(peerId)}>{conn ? t('refresh') : t('connect')}</button> :
                     <button className="rounded-md px-4 py-2 font-medium shadow text-black bg-gray-300 w-30" disabled>{conn ? t('refresh') : t('connect')}</button> 
                 }

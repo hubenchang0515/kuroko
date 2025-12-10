@@ -124,7 +124,7 @@ export default function RecvPage(props:{peer?:Peer}) {
                 <Link className="flex gap-1 cursor-pointer px-6 py-3 rounded-md font-medium shadow transition-all duration-200 ease-in-out focus:outline-none flex gap-1 bg-gray-200 text-gray-900 hover:bg-[#60d0c8] active:scale-95 active:shadow-inner" to='/'><UploadIcon/>{t('send')}</Link>
                 <Link className="flex gap-1 cursor-pointer px-6 py-3 rounded-md font-medium shadow transition-all duration-200 ease-in-out focus:outline-none flex gap-1 bg-[#39c5bb] text-white hover:bg-[#60d0c8] active:scale-95 active:shadow-inner" to='/recv'><DownloadIcon/>{t('recv')}</Link>
             </div>
-            <input type="text" className="w-full border-2 border-gray-400 rounded-md p-2 text-center fade-in-from-right" placeholder={t("placeholder")} value={peerId} onChange={ev=>setPeerId(ev.target.value)}/>
+            <input type="text" className="w-full border-2 border-gray-400 rounded-md p-2 text-center fade-in-from-right" disabled={!props.peer} placeholder={t("placeholder")} value={peerId} onChange={ev=>setPeerId(ev.target.value)}/>
             <div className="flex gap-2 fade-in-from-right">
                 {
                     !connecting && doing.length === 0 ?

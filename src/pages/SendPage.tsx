@@ -7,7 +7,6 @@ import UploadIcon from "../assets/UploadIcon";
 import DownloadIcon from "../assets/DownloadIcon";
 import { Link } from "react-router-dom";
 import type { DownloadRequest, DownloadResponse, ListResponse, Message } from "../utils/protocol";
-import { sleep } from "../utils/utils";
 
 export default function SendPage(props:{peer?:Peer}) {
     const { t } = useTranslation();
@@ -59,7 +58,6 @@ export default function SendPage(props:{peer?:Peer}) {
                                 
                                 pos += value?.byteLength || 0;
                                 conn.send(response);
-                                await sleep(1);
 
                                 if (!done) {
                                     read();
